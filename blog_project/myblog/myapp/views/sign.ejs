@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>My Blog</title>
+	<!-- import angularjs, angular-route, angular-cookies, controller -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js" type="text/javascript"></script>
+	<script src="/javascripts/controller.js" type="text/javascript"></script>
+	<link href="/stylesheets/style.css" rel='stylesheet' type='text/css'>
+	
+</head>
+<body ng-controller="signController">
+	<div id="Header">
+		<h1>Welcome to my Blog!</h1>
+		<p style="font-size: 20px; color: blue;" ng-if="isLogin">Hello {{account}}!</p>
+		<a href="/signUp" ng-if="!isLogin"><button>Sign up</button></a>
+		<a href="/signIn" ng-if="!isLogin"><button>Sign in</button></a>
+		<a href="/"><button>Home</button></a>
+		<a href="/logOut" ng-if="isLogin""><button>Log out</button></a>
+	</div>
+
+	<div>
+	<center>
+		<form name="signForm">
+			<div>
+				Account: <input type="text" name="account" placeholder="Please type the user account" ng-model="form.account" ng-required="true" style="margin-left: 86px;"> <br>
+			</div>
+			<div>
+				Password: <input type="password" name="password" placeholder="Please type the password" ng-model="form.password" ng-required="true" style="margin-left: 78px;"> <br>
+			</div>
+			<div ng-if="!isSignIn">
+				Confirm password: <input type="password" name="c_password" placeholder="Please type the password again" ng-model="form.r_password" ng-required="true" compare-to="form.password"> <br>
+			</div>
+
+			<button type="submit" ng-if="!isSignIn && signForm.account.$valid && signForm.password.$valid && signForm.c_password.$valid" ng-click="signUp()">submit</button>
+			<button type="submit" ng-if="isSignIn && signForm.account.$valid && signForm.password.$valid" ng-click="signIn()">submit</button>
+			</form>
+
+			<p ng-if="!isSignIn && signForm.account.$valid && signForm.password.$valid && !signForm.c_password.$valid"">Password and Confirm password are not the same!</p>
+			<p ng-if="!isSignIn && fail">Account already exists!</p>
+			
+			<p ng-if="isSignIn && fail">This account does not exist, or you type the wrong password</p>
+	</center>
+	</div>
+	<script type="text/javascript">
+		var signIn = <%= isSignIn %>;
+	</script>
+</body>
+</html>

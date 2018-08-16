@@ -1,0 +1,67 @@
+	#Header{
+		width:1200px;
+		height:200px;
+		text-align:center;
+		line-height:50px;
+		font-size:30px;
+		font-weight:bold;
+		color:#444444;
+		background-color:#DDDDDD;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+	h1{
+		line-height: 100px;
+		margin: 5px;
+	}
+	p{
+		line-height: 30px;
+		margin: 0;
+	}
+	table{
+		width:1000px;
+		height:200px;
+		text-align:center;
+		line-height:30px;
+		font-size:15px;
+		margin: 15px;
+		margin-left: auto;
+		margin-right: auto;
+		word-wrap: break-word;
+		word-break:break-all;
+   		table-layout: fixed;
+	}
+	button{
+		width:140px;
+		height: 30px;
+		padding: 5px;
+		border: 10px;
+		margin: 15px;
+		background: #AAAAAA;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	.button2{
+		width: 60px;
+		height: 20px;
+		margin: 10px;
+		line-height: 5px;
+		border: 2px solid;
+		border-color: #AAAAAA;
+		background: white;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	input, textarea{
+		width:320px;
+		height: 30px;
+		padding: 5px;
+		margin: 20px;
+		font-size: 20px;
+		vertical-align: middle;
+	}
+	textarea{
+		width: 500px;
+		height: 100px;
+	}
